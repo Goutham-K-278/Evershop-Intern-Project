@@ -3,7 +3,7 @@
 This repository contains my Evershop e-commerce project and detailed AWS deployment documentation.
 
 ## Deployment Documentation
-The full deployment guide is in [`docs/Evershop Deployment on AWS EC2.pdf`](docs/Evershop%20Deployment%20on%20AWS%20EC2.pdf)
+The full deployment guide is in [`docs/Evershop Deployment on AWS EC2.pdf`](https://drive.google.com/file/d/15OBy_OpjFwOqQ0LI7ibosxDVeYPv8B8-/view?usp=drive_link)
 
 ## Technologies Used
 - AWS EC2
