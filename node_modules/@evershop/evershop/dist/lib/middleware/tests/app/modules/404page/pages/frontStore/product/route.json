@@ -1,0 +1,5 @@
+{
+  "methods": ["GET"],
+  "path": "/product/:id",
+  "name": "Product single page"
+}

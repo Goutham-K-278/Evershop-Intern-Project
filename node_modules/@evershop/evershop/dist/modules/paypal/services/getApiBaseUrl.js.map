@@ -1,0 +1,1 @@
+{"version":3,"file":"getApiBaseUrl.js","sourceRoot":"","sources":["../../../../src/modules/paypal/services/getApiBaseUrl.js"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,MAAM,mCAAmC,CAAC;AAE/D,MAAM,CAAC,KAAK,UAAU,aAAa;IACjC,MAAM,GAAG,GAAG,MAAM,UAAU,CAC1B,mBAAmB,EACnB,kCAAkC,CACnC,CAAC;IACF,OAAO,GAAG,CAAC;AACb,CAAC"}

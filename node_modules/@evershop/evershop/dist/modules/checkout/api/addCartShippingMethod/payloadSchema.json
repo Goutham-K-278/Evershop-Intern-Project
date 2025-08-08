@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "method_code": {
+      "type": "string"
+    }
+  },
+  "required": ["method_code"],
+  "additionalProperties": true,
+  "errorMessage": {
+    "properties": {
+      "method_code": "Method code is required"
+    }
+  }
+}

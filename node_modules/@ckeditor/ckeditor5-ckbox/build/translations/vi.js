@@ -1,0 +1,1 @@
+!function(n){const i=n.vi=n.vi||{};i.dictionary=Object.assign(i.dictionary||{},{"Cannot determine a category for the uploaded file.":"Không thể xác định danh mục cho tệp được tải lên.","Open file manager":"Mở trình quản lý tệp"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

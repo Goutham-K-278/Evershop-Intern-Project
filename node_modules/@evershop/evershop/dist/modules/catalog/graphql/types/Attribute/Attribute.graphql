@@ -1,0 +1,28 @@
+"""
+Represents a single attribute option
+"""
+type AttributeOption {
+  attributeOptionId: ID!
+  uuid: String!
+  optionText: String!
+}
+
+"""
+Represents a single attribute
+"""
+type Attribute {
+  attributeId: ID!
+  uuid: String!
+  attributeCode: String!
+  attributeName: String!
+  type: String!
+  isRequired: Int!
+  displayOnFrontend: Int!
+  sortOrder: Int!
+  isFilterable: Int!
+  options: [AttributeOption]
+}
+
+extend type Query {
+  attribute(id: Int): Attribute
+}

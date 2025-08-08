@@ -1,0 +1,1 @@
+!function(a){const i=a.et=a.et||{};i.dictionary=Object.assign(i.dictionary||{},{"Cannot determine a category for the uploaded file.":"Ei suuda üles laaditud faili kategooriat tuvastada.","Open file manager":"Ava failihaldur"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

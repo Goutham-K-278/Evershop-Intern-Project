@@ -1,0 +1,1 @@
+{"version":3,"file":"getCollectionsBaseQuery.js","sourceRoot":"","sources":["../../../../src/modules/catalog/services/getCollectionsBaseQuery.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAE,MAAM,kCAAkC,CAAC;AAG1D,MAAM,CAAC,MAAM,uBAAuB,GAAG,GAAgB,EAAE;IACvD,MAAM,KAAK,GAAG,MAAM,EAAE,CAAC,IAAI,CAAC,YAAY,CAAC,CAAC;IAC1C,OAAO,KAAK,CAAC;AACf,CAAC,CAAC"}

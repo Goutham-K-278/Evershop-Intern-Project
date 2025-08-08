@@ -1,0 +1,1 @@
+!function(n){const a=n.sv=n.sv||{};a.dictionary=Object.assign(a.dictionary||{},{"Cannot determine a category for the uploaded file.":"Kan inte avgöra kategorin på den uppladdade filen.","Open file manager":"Öppna filhanterare"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

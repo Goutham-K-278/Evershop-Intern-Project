@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "address": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true
+    },
+    "type": {
+      "type": "string",
+      "enum": ["shipping", "billing"]
+    }
+  },
+  "required": ["address", "type"],
+  "additionalProperties": true,
+  "errorMessage": {
+    "properties": {
+      "cart_id": "Cart id is required",
+      "address": "Address is required",
+      "type": "Address type is required"
+    }
+  }
+}

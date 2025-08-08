@@ -1,0 +1,31 @@
+/*
+ * Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ */
+
+@import "../../mixins/_unselectable.css";
+
+.ck.ck-button,
+a.ck.ck-button {
+	@mixin ck-unselectable;
+
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: left;
+
+	& .ck-button__label {
+		display: none;
+	}
+
+	&.ck-button_with-text {
+		& .ck-button__label {
+			display: inline-block;
+		}
+	}
+
+	/* Center the icon horizontally in a button without text. */
+	&:not(.ck-button_with-text)  {
+		justify-content: center;
+	}
+}

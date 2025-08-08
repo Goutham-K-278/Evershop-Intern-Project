@@ -1,0 +1,1 @@
+!function(e){const a=e.sr=e.sr||{};a.dictionary=Object.assign(a.dictionary||{},{"Cannot determine a category for the uploaded file.":"Nije moguće odrediti kategoriju za otpremljenu datoteku.","Open file manager":"Otvori upravljač datotekama"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

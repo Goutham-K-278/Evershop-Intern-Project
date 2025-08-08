@@ -1,0 +1,1 @@
+!function(e){const i=e.pl=e.pl||{};i.dictionary=Object.assign(i.dictionary||{},{"Cannot determine a category for the uploaded file.":"Nie można ustalić kategorii przesłanego pliku.","Open file manager":"Otwórz menedżer plików"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

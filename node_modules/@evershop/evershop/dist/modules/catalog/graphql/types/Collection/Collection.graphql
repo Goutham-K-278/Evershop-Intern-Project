@@ -1,0 +1,30 @@
+"""
+The `Collection` type represents a product collection.
+"""
+type Collection {
+  collectionId: Int!
+  uuid: String!
+  name: String!
+  description: JSON
+  code: String!
+  products(filters: [FilterInput]): ProductCollection
+}
+
+"""
+Returns a collection of product collection.
+"""
+type CollectionCollection {
+  items: [Collection]
+  currentPage: Int!
+  total: Int!
+  currentFilters: [Filter]
+}
+
+extend type Product {
+  collections: [Collection],
+}
+
+extend type Query {
+  collections(filters: [FilterInput]): CollectionCollection
+  collection(code: String): Collection
+}

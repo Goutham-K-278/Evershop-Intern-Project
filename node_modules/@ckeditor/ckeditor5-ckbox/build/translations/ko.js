@@ -1,0 +1,1 @@
+!function(n){const o=n.ko=n.ko||{};o.dictionary=Object.assign(o.dictionary||{},{"Cannot determine a category for the uploaded file.":"업로드된 파일의 카테고리를 확인할 수 없습니다.","Open file manager":"파일 관리자 열기"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

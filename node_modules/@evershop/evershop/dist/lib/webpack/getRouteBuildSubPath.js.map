@@ -1,0 +1,1 @@
+{"version":3,"file":"getRouteBuildSubPath.js","sourceRoot":"","sources":["../../../src/lib/webpack/getRouteBuildSubPath.js"],"names":[],"mappings":"AAAA,MAAM,UAAU,oBAAoB,CAAC,KAAK;IACxC,MAAM,EAAE,EAAE,EAAE,OAAO,EAAE,GAAG,KAAK,CAAC;IAC9B,OAAO,OAAO,KAAK,IAAI,CAAC,CAAC,CAAC,SAAS,EAAE,EAAE,CAAC,CAAC,CAAC,cAAc,EAAE,EAAE,CAAC;AAC/D,CAAC"}

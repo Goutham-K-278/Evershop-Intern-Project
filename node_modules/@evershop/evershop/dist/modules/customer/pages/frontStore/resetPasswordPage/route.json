@@ -1,0 +1,5 @@
+{
+  "methods": ["GET"],
+  "path": "/account/reset-password",
+  "name": "Reset password page"
+}

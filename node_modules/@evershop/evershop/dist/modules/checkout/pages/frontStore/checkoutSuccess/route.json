@@ -1,0 +1,5 @@
+{
+  "methods": ["GET"],
+  "path": "/checkout/success/:orderId?",
+  "name": "Checkout success page"
+}

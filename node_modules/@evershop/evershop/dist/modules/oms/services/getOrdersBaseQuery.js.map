@@ -1,0 +1,1 @@
+{"version":3,"file":"getOrdersBaseQuery.js","sourceRoot":"","sources":["../../../../src/modules/oms/services/getOrdersBaseQuery.js"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAE,MAAM,kCAAkC,CAAC;AAE1D,MAAM,CAAC,MAAM,kBAAkB,GAAG,GAAG,EAAE;IACrC,MAAM,KAAK,GAAG,MAAM,EAAE,CAAC,IAAI,CAAC,OAAO,CAAC,CAAC;IAErC,OAAO,KAAK,CAAC;AACf,CAAC,CAAC"}

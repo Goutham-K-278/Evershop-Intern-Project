@@ -1,0 +1,1 @@
+{"version":3,"file":"fragmentToString.js","sourceRoot":"","sources":["../../src/fragmentToString/fragmentToString.ts"],"names":[],"mappings":";;AAOA,4CAMC;AAbD,gCAA+B;AAE/B;;;;GAIG;AACH,SAAgB,gBAAgB,CAAC,QAA0B;IACzD,IAAM,GAAG,GAAG,IAAA,WAAI,EAAC,KAAK,CAAC,CAAC;IAExB,GAAG,CAAC,WAAW,CAAC,QAAQ,CAAC,CAAC;IAE1B,OAAO,GAAG,CAAC,SAAS,CAAC;AACvB,CAAC"}

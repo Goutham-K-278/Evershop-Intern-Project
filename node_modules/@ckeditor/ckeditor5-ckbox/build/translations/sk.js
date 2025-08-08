@@ -1,0 +1,1 @@
+!function(a){const n=a.sk=a.sk||{};n.dictionary=Object.assign(n.dictionary||{},{"Cannot determine a category for the uploaded file.":"Neznáma kategória pre nahratý súbor.","Open file manager":"Otvoriť manažér súborov"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

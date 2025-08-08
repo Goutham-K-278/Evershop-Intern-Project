@@ -1,0 +1,1 @@
+{"version":3,"file":"getAdminSessionCookieName.js","sourceRoot":"","sources":["../../../../src/modules/auth/services/getAdminSessionCookieName.js"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,gCAAgC,CAAC;AAE3D,MAAM,CAAC,MAAM,yBAAyB,GAAG,GAAG,EAAE,CAC5C,SAAS,CAAC,gCAAgC,EAAE,MAAM,CAAC,CAAC"}

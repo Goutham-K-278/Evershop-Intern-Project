@@ -1,0 +1,10 @@
+{
+  "name": "@editorjs/helpers",
+  "description": "Utils useful for Editor.js tools development",
+  "version": "0.0.4",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json"
+  }
+}

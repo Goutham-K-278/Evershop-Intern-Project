@@ -1,0 +1,1 @@
+{"version":3,"file":"Inventory.admin.resolvers.js","sourceRoot":"","sources":["../../../../../../../src/modules/catalog/graphql/types/Product/Inventory/Inventory.admin.resolvers.js"],"names":[],"mappings":"AAAA,eAAe;IACb,SAAS,EAAE;QACT,GAAG,EAAE,CAAC,SAAS,EAAE,EAAE,CAAC,SAAS,CAAC,GAAG,IAAI,CAAC;KACvC;CACF,CAAC"}

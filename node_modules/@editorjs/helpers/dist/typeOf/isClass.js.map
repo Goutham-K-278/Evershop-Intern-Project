@@ -1,0 +1,1 @@
+{"version":3,"file":"isClass.js","sourceRoot":"","sources":["../../src/typeOf/isClass.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAE1C;;;;GAIG;AACH,8DAA8D;AAC9D,MAAM,UAAU,OAAO,CAAC,EAAO;IAC7B,OAAO,UAAU,CAAC,EAAE,CAAC,IAAI,cAAc,CAAC,IAAI,CAAC,EAAE,CAAC,QAAQ,EAAE,CAAC,CAAC;AAC9D,CAAC"}

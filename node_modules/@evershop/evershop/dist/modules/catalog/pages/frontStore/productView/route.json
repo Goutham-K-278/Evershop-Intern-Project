@@ -1,0 +1,5 @@
+{
+  "methods": ["GET"],
+  "path": "/product/:uuid",
+  "name": "Product single page"
+}

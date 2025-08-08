@@ -1,0 +1,1 @@
+!function(e){const a=e.ca=e.ca||{};a.dictionary=Object.assign(a.dictionary||{},{"Cannot determine a category for the uploaded file.":"No es pot determinar una categoria per al fitxer penjat.","Open file manager":"Obrir el gestor de fitxers"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

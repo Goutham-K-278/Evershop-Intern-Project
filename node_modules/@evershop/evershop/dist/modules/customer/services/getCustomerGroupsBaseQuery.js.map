@@ -1,0 +1,1 @@
+{"version":3,"file":"getCustomerGroupsBaseQuery.js","sourceRoot":"","sources":["../../../../src/modules/customer/services/getCustomerGroupsBaseQuery.js"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAE,MAAM,kCAAkC,CAAC;AAE1D,MAAM,CAAC,MAAM,0BAA0B,GAAG,GAAG,EAAE;IAC7C,MAAM,KAAK,GAAG,MAAM,EAAE,CAAC,IAAI,CAAC,gBAAgB,CAAC,CAAC;IAE9C,OAAO,KAAK,CAAC;AACf,CAAC,CAAC"}

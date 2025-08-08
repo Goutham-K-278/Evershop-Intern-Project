@@ -1,0 +1,5 @@
+{
+  "methods": ["GET"],
+  "path": "/account/login",
+  "name": "Login page"
+}

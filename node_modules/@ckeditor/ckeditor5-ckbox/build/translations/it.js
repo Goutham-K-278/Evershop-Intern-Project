@@ -1,0 +1,1 @@
+!function(i){const e=i.it=i.it||{};e.dictionary=Object.assign(e.dictionary||{},{"Cannot determine a category for the uploaded file.":"Impossibile determinare la categoria del file caricato.","Open file manager":"Apri il gestore dei file"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

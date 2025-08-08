@@ -1,0 +1,1 @@
+{"version":3,"file":"LayoutLoader.js","sourceRoot":"","sources":["../../../../src/lib/webpack/loaders/LayoutLoader.js"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,UAAU,YAAY,CAAC,OAAO;IAC1C,iDAAiD;IACjD,MAAM,WAAW,GACf,iGAAiG,CAAC;IAEpG,OAAO,OAAO,CAAC,OAAO,CAAC,WAAW,EAAE,EAAE,CAAC,CAAC;AAC1C,CAAC"}

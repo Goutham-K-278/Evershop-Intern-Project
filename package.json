@@ -1,0 +1,17 @@
+{
+  "name": "evershop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "evershop install",
+    "build": "evershop build",
+    "start": "evershop start"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@evershop/evershop": "^2.0.0"
+  }
+}

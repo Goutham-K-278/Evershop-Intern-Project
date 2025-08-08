@@ -1,0 +1,10 @@
+export declare const OK = 200;
+export declare const INVALID_PAYLOAD = 400;
+export declare const INTERNAL_SERVER_ERROR = 500;
+export declare const NOT_FOUND = 404;
+export declare const UNAUTHORIZED = 401;
+export declare const FORBIDDEN = 403;
+export declare const CONFLICT = 409;
+export declare const UNPROCESSABLE_ENTITY = 422;
+export declare const TOO_MANY_REQUESTS = 429;
+export declare const GATEWAY_TIMEOUT = 504;

@@ -1,0 +1,1 @@
+{"version":3,"file":"isHtmlString.js","sourceRoot":"","sources":["../../src/isHtmlString/isHtmlString.ts"],"names":[],"mappings":";;AAOA,oCAMC;AAbD,gCAA+B;AAE/B;;;;GAIG;AACH,SAAgB,YAAY,CAAC,GAAW;IACtC,IAAM,OAAO,GAAG,IAAA,WAAI,EAAC,KAAK,CAAC,CAAC;IAE5B,OAAO,CAAC,SAAS,GAAG,GAAG,CAAC;IAExB,OAAO,OAAO,CAAC,iBAAiB,GAAG,CAAC,CAAC;AACvC,CAAC"}

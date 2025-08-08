@@ -1,0 +1,1 @@
+{"version":3,"file":"getCouponsBaseQuery.js","sourceRoot":"","sources":["../../../../src/modules/promotion/services/getCouponsBaseQuery.js"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAE,MAAM,kCAAkC,CAAC;AAE1D,MAAM,CAAC,MAAM,mBAAmB,GAAG,GAAG,EAAE;IACtC,MAAM,KAAK,GAAG,MAAM,EAAE,CAAC,IAAI,CAAC,QAAQ,CAAC,CAAC;IAEtC,OAAO,KAAK,CAAC;AACf,CAAC,CAAC"}

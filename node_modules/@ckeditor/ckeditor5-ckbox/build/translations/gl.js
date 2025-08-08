@@ -1,0 +1,1 @@
+!function(e){const o=e.gl=e.gl||{};o.dictionary=Object.assign(o.dictionary||{},{"Cannot determine a category for the uploaded file.":"Non é posíbel determinar unha categoría para o ficheiro cargado.","Open file manager":"Abrir o xestor de ficheiros"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

@@ -1,0 +1,86 @@
+import fs from 'fs';
+import JSON5 from 'json5';
+import uniqid from 'uniqid';
+import { isResolvable } from '../../util/isResolvable.js';
+import { generateComponentKey } from './keyGenerator.js';
+import { parseGraphqlByFile } from './parseGraphqlByFile.js';
+export function parseGraphql(modules) {
+    let inUsedFragments = [];
+    const propsMap = {};
+    let queries = {};
+    let fragmentStr = '';
+    const variableList = {};
+    modules.forEach((module) => {
+        if (!fs.existsSync(module) && !isResolvable(module)) {
+            return;
+        }
+        const variables = {
+            values: {},
+            defs: []
+        };
+        let modulePath;
+        let moduleKey;
+        // If the module is resolvable, get the apsolute path
+        if (!fs.existsSync(module)) {
+            modulePath = new URL(import.meta.resolve(module)).pathname;
+            moduleKey = generateComponentKey(module);
+        }
+        else {
+            modulePath = module;
+            moduleKey = generateComponentKey(modulePath);
+        }
+        const moduleGraphqlData = parseGraphqlByFile(modulePath);
+        queries[moduleKey] = moduleGraphqlData.query.source;
+        fragmentStr += `\n${moduleGraphqlData.fragments.source}`;
+        Object.assign(variables.values, JSON5.parse(moduleGraphqlData.variables.source));
+        variables.defs = variables.defs.concat(moduleGraphqlData.variables.definitions);
+        variableList[moduleKey] = variables;
+        propsMap[moduleKey] = moduleGraphqlData.query.props;
+        inUsedFragments = inUsedFragments.concat(moduleGraphqlData.fragments.pairs);
+    });
+    // Process fragments
+    const extraFragments = [];
+    inUsedFragments.forEach((fragment) => {
+        // Check if there was a fragment with same name and type already processed
+        const f = extraFragments.find((ar) => ar.name === fragment.name && ar.type === fragment.type);
+        if (f) {
+            // Replace fragment alias with the one already processed
+            const regex = new RegExp(`\\.\\.\\.([ ]+)?${fragment.alias}`, 'g');
+            queries = Object.keys(queries).reduce((acc, key) => {
+                acc[key] = queries[key].replace(regex, `...${f.alias}`);
+                return acc;
+            }, {});
+            fragmentStr = fragmentStr.replace(regex, `...${f.alias}`);
+        }
+        else {
+            const regex = new RegExp(`fragment([ ]+)${fragment.name}([ ]+)on([ ]+)${fragment.type}`, 'g');
+            fragmentStr = fragmentStr.replace(regex, () => {
+                const alias = `${fragment.name}_${uniqid()}`;
+                // Check if there is a fragment with the same name and type
+                const frm = extraFragments.find((ar) => ar.name === fragment.name && ar.type === fragment.type);
+                if (frm) {
+                    frm.child.push(alias);
+                }
+                else {
+                    extraFragments.push({
+                        name: fragment.name,
+                        alias: fragment.alias,
+                        type: fragment.type,
+                        child: [alias]
+                    });
+                }
+                return `fragment ${alias} on ${fragment.type}`;
+            });
+        }
+    });
+    extraFragments.forEach((fragment) => {
+        fragmentStr += `\nfragment ${fragment.alias} on ${fragment.type} {\n ${fragment.child.map((c) => `...${c}`).join('\n')} \n}`;
+    });
+    return {
+        queries,
+        fragments: fragmentStr,
+        variables: variableList,
+        propsMap
+    };
+}
+//# sourceMappingURL=parseGraphql.js.map

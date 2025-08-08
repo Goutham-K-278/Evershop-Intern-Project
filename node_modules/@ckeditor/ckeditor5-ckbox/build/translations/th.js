@@ -1,0 +1,1 @@
+!function(n){const e=n.th=n.th||{};e.dictionary=Object.assign(e.dictionary||{},{"Cannot determine a category for the uploaded file.":"ไม่สามารถกำหนดหมวดหมู่สำหรับไฟล์ที่อัปโหลด","Open file manager":"เปิดเครื่องมือจัดการไฟล์"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

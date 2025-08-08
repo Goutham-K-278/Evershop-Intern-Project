@@ -1,0 +1,1 @@
+{"version":3,"file":"getCustomersBaseQuery.js","sourceRoot":"","sources":["../../../../src/modules/customer/services/getCustomersBaseQuery.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAe,MAAM,kCAAkC,CAAC;AAEvE,MAAM,CAAC,MAAM,qBAAqB,GAAG,GAAgB,EAAE;IACrD,MAAM,KAAK,GAAG,MAAM,EAAE,CAAC,IAAI,CAAC,UAAU,CAAC,CAAC;IAExC,OAAO,KAAK,CAAC;AACf,CAAC,CAAC"}

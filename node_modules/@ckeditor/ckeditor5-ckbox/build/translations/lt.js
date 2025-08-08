@@ -1,0 +1,1 @@
+!function(i){const a=i.lt=i.lt||{};a.dictionary=Object.assign(a.dictionary||{},{"Cannot determine a category for the uploaded file.":"Negalima apibrėžti įkelto failo kategorijos.","Open file manager":"Atidaryti failų tvarkyklę"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

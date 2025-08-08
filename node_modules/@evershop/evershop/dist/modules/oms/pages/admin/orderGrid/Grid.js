@@ -1,0 +1,360 @@
+import { Card } from '@components/admin/cms/Card';
+import CreateAt from '@components/admin/customer/customerGrid/rows/CreateAt';
+import OrderNumberRow from '@components/admin/oms/orderGrid/rows/OrderNumberRow';
+import PaymentStatusRow from '@components/admin/oms/orderGrid/rows/PaymentStatus';
+import ShipmentStatusRow from '@components/admin/oms/orderGrid/rows/ShipmentStatus';
+import TotalRow from '@components/admin/oms/orderGrid/rows/TotalRow';
+import Area from '@components/common/Area';
+import { Field } from '@components/common/form/Field';
+import { Checkbox } from '@components/common/form/fields/Checkbox';
+import { Form } from '@components/common/form/Form';
+import SortableHeader from '@components/common/grid/headers/Sortable';
+import Pagination from '@components/common/grid/Pagination';
+import BasicRow from '@components/common/grid/rows/BasicRow';
+import Filter from '@components/common/list/Filter';
+import { useAlertContext } from '@components/common/modal/Alert';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+function Actions({ orders = [], selectedIds = [] }) {
+    const { openAlert, closeAlert } = useAlertContext();
+    const [isLoading, setIsLoading] = useState(false);
+    const fullFillOrders = async () => {
+        setIsLoading(true);
+        const promises = orders
+            .filter((order) => selectedIds.includes(order.uuid))
+            .map((order) => axios.post(order.createShipmentApi));
+        await Promise.all(promises);
+        setIsLoading(false);
+        // Refresh the page
+        window.location.reload();
+    };
+    const actions = [
+        {
+            name: 'Mark as shipped',
+            onAction: () => {
+                openAlert({
+                    heading: `Fullfill ${selectedIds.length} orders`,
+                    content: (React.createElement(Checkbox, { name: "notify_customer", label: "Send notification to the customer", onChange: () => { } })),
+                    primaryAction: {
+                        title: 'Cancel',
+                        onAction: closeAlert,
+                        variant: 'default'
+                    },
+                    secondaryAction: {
+                        title: 'Mark as shipped',
+                        onAction: async () => {
+                            await fullFillOrders();
+                        },
+                        variant: 'primary',
+                        isLoading
+                    }
+                });
+            }
+        }
+    ];
+    return (React.createElement("tr", null,
+        selectedIds.length === 0 && null,
+        selectedIds.length > 0 && (React.createElement("td", { style: { borderTop: 0 }, colSpan: "100" },
+            React.createElement("div", { className: "inline-flex border border-divider rounded justify-items-start" },
+                React.createElement("a", { href: "#", className: "font-semibold pt-3 pb-3 pl-6 pr-6" },
+                    selectedIds.length,
+                    " selected"),
+                actions.map((action, i) => (React.createElement("a", { key: i, href: "#", onClick: (e) => {
+                        e.preventDefault();
+                        action.onAction();
+                    }, className: "font-semibold pt-3 pb-3 pl-6 pr-6 block border-l border-divider self-center" },
+                    React.createElement("span", null, action.name)))))))));
+}
+Actions.propTypes = {
+    selectedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
+    orders: PropTypes.arrayOf(PropTypes.shape({
+        uuid: PropTypes.string.isRequired,
+        createShipmentApi: PropTypes.string.isRequired
+    })).isRequired
+};
+export default function OrderGrid({ orders: { items: orders, total, currentFilters = [] }, paymentStatusList, shipmentStatusList }) {
+    const page = currentFilters.find((filter) => filter.key === 'page')
+        ? parseInt(currentFilters.find((filter) => filter.key === 'page').value, 10)
+        : 1;
+    const limit = currentFilters.find((filter) => filter.key === 'limit')
+        ? parseInt(currentFilters.find((filter) => filter.key === 'limit').value, 10)
+        : 20;
+    const [selectedRows, setSelectedRows] = useState([]);
+    return (React.createElement(Card, null,
+        React.createElement(Card.Session, { title: React.createElement(Form, { submitBtn: false, id: "orderGridFilter" },
+                React.createElement("div", { className: "flex gap-8 justify-center items-center" },
+                    React.createElement(Area, { id: "orderGridFilter", noOuter: true, coreComponents: [
+                            {
+                                component: {
+                                    default: () => {
+                                        var _a;
+                                        return (React.createElement(Field, { type: "text", name: "keyword", id: "keyword", placeholder: "Search", value: (_a = currentFilters.find((f) => f.key === 'keyword')) === null || _a === void 0 ? void 0 : _a.value, onKeyPress: (e) => {
+                                                var _a;
+                                                // If the user press enter, we should submit the form
+                                                if (e.key === 'Enter') {
+                                                    const url = new URL(document.location);
+                                                    const keyword = (_a = document.getElementById('keyword')) === null || _a === void 0 ? void 0 : _a.value;
+                                                    if (keyword) {
+                                                        url.searchParams.set('keyword', keyword);
+                                                    }
+                                                    else {
+                                                        url.searchParams.delete('keyword');
+                                                    }
+                                                    window.location.href = url;
+                                                }
+                                            } }));
+                                    }
+                                },
+                                sortOrder: 5
+                            },
+                            {
+                                component: {
+                                    default: () => (React.createElement(Filter, { options: paymentStatusList.map((status) => ({
+                                            label: status.name,
+                                            value: status.code,
+                                            onSelect: () => {
+                                                const url = new URL(document.location);
+                                                url.searchParams.set('payment_status', status.code);
+                                                window.location.href = url;
+                                            }
+                                        })), selectedOption: currentFilters.find((f) => f.key === 'payment_status')
+                                            ? currentFilters.find((f) => f.key === 'payment_status').value
+                                            : undefined, title: "Payment status" }))
+                                },
+                                sortOrder: 10
+                            },
+                            {
+                                component: {
+                                    default: () => (React.createElement(Filter, { options: shipmentStatusList.map((status) => ({
+                                            label: status.name,
+                                            value: status.code,
+                                            onSelect: () => {
+                                                const url = new URL(document.location);
+                                                url.searchParams.set('shipment_status', status.code);
+                                                window.location.href = url;
+                                            }
+                                        })), selectedOption: currentFilters.find((f) => f.key === 'shipment_status')
+                                            ? currentFilters.find((f) => f.key === 'shipment_status').value
+                                            : undefined, title: "Shipment status" }))
+                                },
+                                sortOrder: 15
+                            }
+                        ], currentFilters: currentFilters }))), actions: [
+                {
+                    variant: 'interactive',
+                    name: 'Clear filter',
+                    onAction: () => {
+                        // Just get the url and remove all query params
+                        const url = new URL(document.location);
+                        url.search = '';
+                        window.location.href = url.href;
+                    }
+                }
+            ] }),
+        React.createElement("table", { className: "listing sticky" },
+            React.createElement("thead", null,
+                React.createElement("tr", null,
+                    React.createElement("th", { className: "align-bottom" },
+                        React.createElement(Checkbox, { onChange: (e) => {
+                                if (e.target.checked) {
+                                    setSelectedRows(orders.map((o) => o.uuid));
+                                }
+                                else {
+                                    setSelectedRows([]);
+                                }
+                            } })),
+                    React.createElement(Area, { className: "", id: "orderGridHeader", noOuter: true, coreComponents: [
+                            {
+                                component: {
+                                    default: () => (React.createElement(SortableHeader, { title: "Order Number", name: "number", currentFilters: currentFilters }))
+                                },
+                                sortOrder: 5
+                            },
+                            {
+                                component: {
+                                    default: () => (React.createElement(SortableHeader, { title: "Date", name: "created_at", currentFilters: currentFilters }))
+                                },
+                                sortOrder: 10
+                            },
+                            {
+                                component: {
+                                    default: () => (React.createElement(SortableHeader, { title: "Customer Email", name: "email", currentFilters: currentFilters }))
+                                },
+                                sortOrder: 15
+                            },
+                            {
+                                component: {
+                                    default: () => (React.createElement(SortableHeader, { title: "Shipment Status", name: "shipment_status", currentFilters: currentFilters }))
+                                },
+                                sortOrder: 20
+                            },
+                            {
+                                component: {
+                                    default: () => (React.createElement(SortableHeader, { title: "Payment Status", name: "payment_status", currentFilters: currentFilters }))
+                                },
+                                sortOrder: 25
+                            },
+                            {
+                                component: {
+                                    default: () => (React.createElement(SortableHeader, { title: "Total", name: "total", currentFilters: currentFilters }))
+                                },
+                                sortOrder: 30
+                            }
+                        ] }))),
+            React.createElement("tbody", null,
+                React.createElement(Actions, { orders: orders, selectedIds: selectedRows, setSelectedRows: setSelectedRows }),
+                orders.map((o) => (React.createElement("tr", { key: o.orderId },
+                    React.createElement("td", null,
+                        React.createElement(Checkbox, { isChecked: selectedRows.includes(o.uuid), onChange: (e) => {
+                                if (e.target.checked) {
+                                    setSelectedRows(selectedRows.concat([o.uuid]));
+                                }
+                                else {
+                                    setSelectedRows(selectedRows.filter((row) => row !== o.uuid));
+                                }
+                            } })),
+                    React.createElement(Area, { className: "", id: "orderGridRow", row: o, noOuter: true, coreComponents: [
+                            {
+                                component: {
+                                    default: () => (React.createElement(OrderNumberRow, { name: o.orderNumber, editUrl: o.editUrl }))
+                                },
+                                sortOrder: 5
+                            },
+                            {
+                                component: {
+                                    default: () => React.createElement(CreateAt, { time: o.createdAt.text })
+                                },
+                                sortOrder: 10
+                            },
+                            {
+                                component: {
+                                    default: ({ areaProps }) => (React.createElement(BasicRow, { id: "customerEmail", areaProps: areaProps }))
+                                },
+                                sortOrder: 15
+                            },
+                            {
+                                component: {
+                                    default: () => (React.createElement(ShipmentStatusRow, { status: o.shipmentStatus }))
+                                },
+                                sortOrder: 20
+                            },
+                            {
+                                component: {
+                                    default: () => (React.createElement(PaymentStatusRow, { status: o.paymentStatus }))
+                                },
+                                sortOrder: 25
+                            },
+                            {
+                                component: {
+                                    default: () => React.createElement(TotalRow, { total: o.grandTotal.text })
+                                },
+                                sortOrder: 30
+                            }
+                        ] })))))),
+        orders.length === 0 && (React.createElement("div", { className: "flex w-full justify-center" }, "There is no order to display")),
+        React.createElement(Pagination, { total: total, limit: limit, page: page })));
+}
+OrderGrid.propTypes = {
+    orders: PropTypes.shape({
+        items: PropTypes.arrayOf(PropTypes.shape({
+            orderId: PropTypes.string.isRequired,
+            uuid: PropTypes.string.isRequired,
+            orderNumber: PropTypes.string.isRequired,
+            createdAt: PropTypes.shape({
+                value: PropTypes.string.isRequired,
+                text: PropTypes.string.isRequired
+            }).isRequired,
+            customerEmail: PropTypes.string.isRequired,
+            shipmentStatus: PropTypes.shape({
+                name: PropTypes.string.isRequired,
+                code: PropTypes.string.isRequired,
+                badge: PropTypes.string.isRequired,
+                progress: PropTypes.string.isRequired
+            }).isRequired,
+            paymentStatus: PropTypes.shape({
+                name: PropTypes.string.isRequired,
+                code: PropTypes.string.isRequired,
+                badge: PropTypes.string.isRequired,
+                progress: PropTypes.string.isRequired
+            }).isRequired,
+            grandTotal: PropTypes.shape({
+                value: PropTypes.number.isRequired,
+                text: PropTypes.string.isRequired
+            }).isRequired,
+            editUrl: PropTypes.string.isRequired,
+            createShipmentApi: PropTypes.string.isRequired
+        })).isRequired,
+        total: PropTypes.number.isRequired,
+        currentFilters: PropTypes.arrayOf(PropTypes.shape({
+            key: PropTypes.string.isRequired,
+            operation: PropTypes.string.isRequired,
+            value: PropTypes.string.isRequired
+        })).isRequired
+    }).isRequired,
+    paymentStatusList: PropTypes.arrayOf(PropTypes.shape({
+        code: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired
+    })).isRequired,
+    shipmentStatusList: PropTypes.arrayOf(PropTypes.shape({
+        code: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired
+    })).isRequired
+};
+export const layout = {
+    areaId: 'content',
+    sortOrder: 20
+};
+export const query = `
+  query Query($filters: [FilterInput]) {
+    orders (filters: $filters) {
+      items {
+        orderId
+        uuid
+        orderNumber
+        createdAt {
+          value
+          text
+        }
+        customerEmail
+        shipmentStatus {
+          name
+          code
+          badge
+          progress
+        }
+        paymentStatus {
+          name
+          code
+          badge
+          progress
+        }
+        grandTotal {
+          value
+          text
+        }
+        editUrl
+        createShipmentApi
+      }
+      total
+      currentFilters {
+        key
+        operation
+        value
+      }
+    }
+    paymentStatusList {
+      code
+      name
+    }
+    shipmentStatusList {
+      code
+      name
+    }
+  }
+`;
+export const variables = `
+{
+  filters: getContextValue('filtersFromUrl')
+}`;
+//# sourceMappingURL=Grid.js.map

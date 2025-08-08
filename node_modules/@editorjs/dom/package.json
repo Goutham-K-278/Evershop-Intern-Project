@@ -1,0 +1,16 @@
+{
+  "name": "@editorjs/dom",
+  "description": "Utils useful for work with dom for Editor.js tools development",
+  "version": "0.0.5",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@editorjs/helpers": "^0.0.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

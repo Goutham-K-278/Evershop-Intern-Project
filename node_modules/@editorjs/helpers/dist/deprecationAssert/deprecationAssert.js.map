@@ -1,0 +1,1 @@
+{"version":3,"file":"deprecationAssert.js","sourceRoot":"","sources":["../../src/deprecationAssert/deprecationAssert.ts"],"names":[],"mappings":"AAAA;;;;;GAKG;AACH,MAAM,UAAU,iBAAiB,CAAC,SAAkB,EAAE,WAAmB,EAAE,WAAmB;IAC5F,MAAM,OAAO,GAAG,IAAI,WAAW,kFAAkF,WAAW,YAAY,CAAC;IAEzI,IAAI,SAAS,EAAE,CAAC;QACd,OAAO,CAAC,IAAI,CAAC,OAAO,CAAC,CAAC;IACxB,CAAC;AACH,CAAC"}

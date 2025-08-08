@@ -1,0 +1,1 @@
+{"version":3,"file":"TaxSetting.resolvers.js","sourceRoot":"","sources":["../../../../../../src/modules/tax/graphql/types/TaxSetting/TaxSetting.resolvers.js"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,sCAAsC,CAAC;AAEjE,eAAe;IACb,OAAO,EAAE;QACP,iBAAiB,EAAE,GAAG,EAAE,CAAC,SAAS,CAAC,iCAAiC,EAAE,KAAK,CAAC;KAC7E;CACF,CAAC"}

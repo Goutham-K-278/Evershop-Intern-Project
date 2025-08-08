@@ -1,0 +1,45 @@
+{
+  "name": "@editorjs/header",
+  "version": "2.8.8",
+  "keywords": [
+    "codex editor",
+    "header",
+    "heading",
+    "editor.js",
+    "editorjs"
+  ],
+  "description": "Heading Tool for Editor.js",
+  "license": "MIT",
+  "repository": "https://github.com/editor-js/header",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/header.umd.js",
+  "module": "./dist/header.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/header.mjs",
+      "require": "./dist/header.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "author": {
+    "name": "CodeX",
+    "email": "team@codex.so"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "vite": "^4.5.0",
+    "vite-plugin-css-injected-by-js": "^3.3.0",
+    "vite-plugin-dts": "^3.9.1"
+  },
+  "dependencies": {
+    "@codexteam/icons": "^0.0.5",
+    "@editorjs/editorjs": "^2.29.1"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"isLeaf.js","sourceRoot":"","sources":["../../src/isLeaf/isLeaf.ts"],"names":[],"mappings":";;AAKA,wBAMC;AAXD;;;;GAIG;AACH,SAAgB,MAAM,CAAC,IAAU;IAC/B,IAAI,IAAI,KAAK,IAAI,EAAE,CAAC;QAClB,OAAO,KAAK,CAAC;IACf,CAAC;IAED,OAAO,IAAI,CAAC,UAAU,CAAC,MAAM,KAAK,CAAC,CAAC;AACtC,CAAC"}

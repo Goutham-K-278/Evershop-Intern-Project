@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "skipEscape": true
+    },
+    "code": {
+      "type": "string",
+      "pattern": "^\\S+$",
+      "errorMessage": {
+        "pattern": "Collection ID should not contain spaces"
+      }
+    }
+  },
+  "additionalProperties": true
+}

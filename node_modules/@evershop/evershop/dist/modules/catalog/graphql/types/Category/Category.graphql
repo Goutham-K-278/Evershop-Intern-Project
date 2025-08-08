@@ -1,0 +1,105 @@
+"""
+The `Category` type represents a category object.
+"""
+type Category {
+  categoryId: Int!
+  uuid: String!
+  name: String!
+  status: Int!
+  includeInNav: Int!
+  showProducts: Int!
+  description: JSON
+  urlKey: String
+  metaTitle: String
+  metaDescription: String
+  metaKeywords: String
+  image: CategoryImage
+  products(filters: [FilterInput]): ProductCollection
+  children: [Category]
+  parent: Category
+  path: [Category]
+  url: String
+  availableAttributes: [FilterAttribute]
+  priceRange: PriceRange
+}
+
+"""
+The `CategoryImage` type represents a category image object.
+"""
+type CategoryImage {
+  alt: String!
+  url: String!
+}
+
+"""
+The `FilterInput` type represents a filter input object. Operations must be one of the following: eq, neq, gt, gteq, lt, lteq, like, nlike, in, nin.
+"""
+enum FilterOperation {
+  eq
+  neq
+  gt
+  gteq
+  lt
+  lteq
+  like
+  nlike
+  in
+  nin
+}
+
+input FilterInput {
+  key: String!
+  operation: FilterOperation!
+  value: ID
+}
+
+"""
+The `Filter` type represents a filter object.
+"""
+type Filter {
+  key: String!
+  operation: String!
+  value: String!
+}
+
+"""
+The `FilterOption` type represents a filter option object.
+"""
+type FilterOption {
+  optionId: Int!
+  optionText: String!
+}
+
+"""
+The `FilterAttribute` type represents a filter attribute object.
+"""
+type FilterAttribute {
+  attributeName: String!
+  attributeCode: String!
+  attributeId: Int!
+  options: [FilterOption]
+}
+
+"""
+Returns a collection of categories.
+"""
+type CategoryCollection {
+  items: [Category]
+  currentPage: Int!
+  total: Int!
+  currentFilters: [Filter]
+}
+
+type PriceRange {
+  min: Float!
+  max: Float!
+}
+
+extend type Product {
+  category: Category,
+}
+
+extend type Query {
+  categories(filters: [FilterInput]): CategoryCollection
+  category(id: Int): Category
+}

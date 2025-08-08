@@ -1,0 +1,128 @@
+
+      import React from 'react';
+      import ReactDOM from 'react-dom';
+      import { Area } from '@evershop/evershop/components/common';
+      import {HydrateFrontStore} from '@evershop/evershop/components/common';
+      
+import ed0493060deda23c841f685470e5c70ba from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/modules/catalog/pages/frontStore/all/SearchBox.js';
+import ef493d4fb8d16ca66600a60d527f7636b from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/modules/checkout/pages/frontStore/all/MiniCart.js';
+import e11f68fa615069cdd718b62e9ed31ce5c from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/modules/cms/pages/frontStore/all/Breadcrumb.js';
+import e23db27135df6566cc5c5e06b4f6a4bc8 from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/modules/cms/pages/frontStore/all/Footer.js';
+import e41b08ca7301caf35e9557738fc143f8b from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/modules/cms/pages/frontStore/all/HeadTags.js';
+import e05c625c6b1166646cfd83d60eb909e45 from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/modules/cms/pages/frontStore/all/Layout.js';
+import e3c8c8815f52799821bf97ab8f84c5e7a from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/modules/cms/pages/frontStore/all/Logo.js';
+import ebb36cbc237f24ea4806a695b968f0c91 from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/modules/cms/pages/frontStore/all/Notification.js';
+import e820dc2f8e9caed1c5e049c9b546dc6e6 from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/modules/customer/pages/frontStore/account/AccountDetails.js';
+import e421899bc68aa2f541b6b02f5dceb4dc2 from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/modules/customer/pages/frontStore/account/Addresses.js';
+import ee1ab1342508efb4c5c47be92b4c055dd from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/modules/customer/pages/frontStore/account/Layout.js';
+import e31a6a0d94206ce94a815454c186ed0be from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/modules/customer/pages/frontStore/account/OrderHistory.js';
+import e19710b613353a01d0e11818e98674949 from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/modules/customer/pages/frontStore/all/UserIcon.js';
+import collection_products from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/components/frontStore/widgets/CollectionProducts.js';
+import text_block from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/components/frontStore/widgets/TextBlock.js';
+import basic_menu from 'file:///C:/Users/gouth/Documents/evershop/node_modules/@evershop/evershop/dist/components/frontStore/widgets/BasicMenu.js';
+Area.defaultProps.components = {
+  'icon-wrapper': {
+    ed0493060deda23c841f685470e5c70ba: {
+      id: 'ed0493060deda23c841f685470e5c70ba',
+      sortOrder: 5,
+      component: { default: ed0493060deda23c841f685470e5c70ba }
+    },
+    ef493d4fb8d16ca66600a60d527f7636b: {
+      id: 'ef493d4fb8d16ca66600a60d527f7636b',
+      sortOrder: 10,
+      component: { default: ef493d4fb8d16ca66600a60d527f7636b }
+    },
+    e19710b613353a01d0e11818e98674949: {
+      id: 'e19710b613353a01d0e11818e98674949',
+      sortOrder: 30,
+      component: { default: e19710b613353a01d0e11818e98674949 }
+    }
+  },
+  content: {
+    e11f68fa615069cdd718b62e9ed31ce5c: {
+      id: 'e11f68fa615069cdd718b62e9ed31ce5c',
+      sortOrder: 0,
+      component: { default: e11f68fa615069cdd718b62e9ed31ce5c }
+    },
+    ee1ab1342508efb4c5c47be92b4c055dd: {
+      id: 'ee1ab1342508efb4c5c47be92b4c055dd',
+      sortOrder: 10,
+      component: { default: ee1ab1342508efb4c5c47be92b4c055dd }
+    }
+  },
+  footer: {
+    e23db27135df6566cc5c5e06b4f6a4bc8: {
+      id: 'e23db27135df6566cc5c5e06b4f6a4bc8',
+      sortOrder: 10,
+      component: { default: e23db27135df6566cc5c5e06b4f6a4bc8 }
+    }
+  },
+  head: {
+    e41b08ca7301caf35e9557738fc143f8b: {
+      id: 'e41b08ca7301caf35e9557738fc143f8b',
+      sortOrder: 5,
+      component: { default: e41b08ca7301caf35e9557738fc143f8b }
+    }
+  },
+  body: {
+    e05c625c6b1166646cfd83d60eb909e45: {
+      id: 'e05c625c6b1166646cfd83d60eb909e45',
+      sortOrder: 1,
+      component: { default: e05c625c6b1166646cfd83d60eb909e45 }
+    },
+    ebb36cbc237f24ea4806a695b968f0c91: {
+      id: 'ebb36cbc237f24ea4806a695b968f0c91',
+      sortOrder: 10,
+      component: { default: ebb36cbc237f24ea4806a695b968f0c91 }
+    }
+  },
+  header: {
+    e3c8c8815f52799821bf97ab8f84c5e7a: {
+      id: 'e3c8c8815f52799821bf97ab8f84c5e7a',
+      sortOrder: 10,
+      component: { default: e3c8c8815f52799821bf97ab8f84c5e7a }
+    }
+  },
+  accountPageInfo: {
+    e820dc2f8e9caed1c5e049c9b546dc6e6: {
+      id: 'e820dc2f8e9caed1c5e049c9b546dc6e6',
+      sortOrder: 10,
+      component: { default: e820dc2f8e9caed1c5e049c9b546dc6e6 }
+    }
+  },
+  accountPageAddressBook: {
+    e421899bc68aa2f541b6b02f5dceb4dc2: {
+      id: 'e421899bc68aa2f541b6b02f5dceb4dc2',
+      sortOrder: 10,
+      component: { default: e421899bc68aa2f541b6b02f5dceb4dc2 }
+    }
+  },
+  accountPageOrderHistory: {
+    e31a6a0d94206ce94a815454c186ed0be: {
+      id: 'e31a6a0d94206ce94a815454c186ed0be',
+      sortOrder: 10,
+      component: { default: e31a6a0d94206ce94a815454c186ed0be }
+    }
+  },
+  '*': {
+    collection_products: {
+      id: 'collection_products',
+      sortOrder: 0,
+      component: { default: collection_products }
+    },
+    text_block: {
+      id: 'text_block',
+      sortOrder: 0,
+      component: { default: text_block }
+    },
+    basic_menu: {
+      id: 'basic_menu',
+      sortOrder: 0,
+      component: { default: basic_menu }
+    }
+  }
+} 
+ReactDOM.hydrate(
+        React.createElement(HydrateFrontStore, null),
+        document.getElementById('app')
+      );

@@ -1,0 +1,1 @@
+!function(i){const a=i.lv=i.lv||{};a.dictionary=Object.assign(a.dictionary||{},{"Cannot determine a category for the uploaded file.":"Nav iespējams noteikt augšupielādētā faila kategoriju","Open file manager":"Atvērt failu pārvaldnieku"})}(window.CKEDITOR_TRANSLATIONS||(window.CKEDITOR_TRANSLATIONS={}));

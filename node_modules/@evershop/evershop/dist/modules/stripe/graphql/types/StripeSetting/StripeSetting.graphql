@@ -1,0 +1,6 @@
+extend type Setting {
+  stripePaymentStatus: Int
+  stripeDisplayName: String
+  stripePublishableKey: String
+  stripePaymentMode: String
+}
